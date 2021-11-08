@@ -1,0 +1,44 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add sass -S
+
+PATH: 
+  E:\Xshell\;E:\app\Asus\product\11.2.0\dbhome_1\bin;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\AOMEI Backupper;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\jdk1.6.0_04\bin;E:\数据库\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;E:;数据库\example\Microsoft SQL Server\140\Tools\Binn\;数据;\Microsoft SQL Server\140\Tools\Binn\;数据库\Microsoft SQL Server\140\DTS\Binn\;数据;\example\Microsoft SQL Server\140\DTS\Binn\;数据库\example\Microsoft SQL Server\150\DTS\Binn\;no;e-v-12\;";E:\Eclipse Jave EE\Tomcat 8.0\bin;E:\Eclipse Jave EE\Tomcat 8.0\lib";C:\Program Files\Java\jdk1.8.0_201\jre\bin;C:\Program Files\Java\jre1.8.0_201\jre\bin;E:\mysql\mysql-8.0.25-winx64\bin;E:\Git\Git\cmd;E:\MongoDB\bin;E:\redis\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;E:\Anaconda;E:\Anaconda\Library\mingw-w64\bin;E:\Anaconda\Library\usr\bin;E:\Anaconda\Library\bin;E:\Anaconda\Scripts;C:\Users\Asus\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Asus\AppData\Local\Programs\Python\Python37\;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;E:\Fiddler;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;E:\Vscode\Microsoft VS Code\bin;E:\WebStorm\WebStorm 2020.2\bin;;E:\mongoose\MongoDB\Server\3.2\bin;E:\bandzip\;C:\Users\Asus\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\Project_Code\Project_examples\manager\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "name": "manager",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+    },
+    "dependencies": {
+      "axios": "^0.24.0",
+      "element-plus": "^1.2.0-beta.2",
+      "vue": "^3.2.16",
+      "vue-router": "^4.0.12"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-vue": "^1.9.3",
+      "vite": "^2.6.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
