@@ -26,7 +26,7 @@
           <el-icon size='20' style="vertical-align: middle">
             <bell />
           </el-icon>
-          <span class="name">admin</span>
+          <span class="name">{{userInfo.name}}</span>
         </div>
       </div>
       <!-- 内容 -->
@@ -38,13 +38,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: '',
   props: {},
   data() {
     return {}
   },
-  computed: {},
+  computed: {
+    ...mapState(['userInfo'])
+  },
   created() {},
   mounted() {},
   watch: {},
@@ -104,6 +107,7 @@ export default {
       }
       // 个人中心
       .user {
+        cursor: pointer;
         line-height: 50px;
         .name {
           margin: 0 20px 0 10px;

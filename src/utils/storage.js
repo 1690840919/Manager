@@ -5,7 +5,7 @@ export default {
     return JSON.parse(window.localStorage.getItem(config.storageName) || '{}')
   },
   setStorage(val){
-    window.localStorage.setItem(config.storageName,JSON.stringify(avl))
+    window.localStorage.setItem(config.storageName,JSON.stringify(val))
   },
   // 储存key-val
   setItem(key,val){

@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import storage from '../utils/storage'
 const store = createStore({
   state:{
     userInfo:{
@@ -6,7 +7,11 @@ const store = createStore({
     }
   },
   mutations:{
-    
+    // 设置用户信息
+    setUserInfo(store,data){
+      store.userInfo = data
+      storage.setItem('userInfo',data)
+    }
   },
   actions:{
 
