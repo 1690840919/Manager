@@ -585,9 +585,7 @@ export default {
   computed: {
     ...mapState(['userInfo'])
   },
-  created() {
-    console.log(this.$route.matched)
-  },
+  created() {},
   mounted() {},
   watch: {},
   methods: {},
@@ -646,9 +644,8 @@ export default {
   // 右边内容
   .rightContent {
     transition: all 0.3s;
-    overflow: hidden;
     margin-left: 250px;
-    height: 100vh;
+    min-height: 100vh;
     background: rgb(236, 238, 242);
     .titleBox {
       height: 50px;
@@ -685,7 +682,7 @@ export default {
     }
     .content {
       height: calc(100vh - 50px);
-      overflow: hidden;
+      overflow: scroll;
     }
   }
   .showContent {
