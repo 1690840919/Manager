@@ -27,6 +27,7 @@
       <!-- 菜单 -->
       <div class="menusBoxs">
         <el-menu
+          router
           active-text-color="rgb(75,147,236)"
           background-color="rgb(1, 20, 36)"
           text-color="#fff"
@@ -34,7 +35,7 @@
           class="el-menu-vertical-demo"
           :collapse="!showMenu"
         >
-          <tree-menu :menuList='menuList' />
+          <tree-menu :menuList="menuList" />
         </el-menu>
       </div>
     </div>
@@ -44,17 +45,56 @@
       <div class="titleBox">
         <!-- 菜单 -->
         <div class="nav">
-          <el-breadcrumb :separator-icon="ArrowRight">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>欢迎使用本系统</el-breadcrumb-item>
+          <el-breadcrumb separator=">">
+            <template v-for="(item, index) in $route.matched">
+              <el-breadcrumb-item
+                v-if="!index"
+                :key="item.path"
+                :to="{ path: '/home' }"
+              >
+                {{ item.meta.title }}
+              </el-breadcrumb-item>
+              <el-breadcrumb-item v-else :key="item.path">
+                <span class="title">
+                  {{ item.meta.title }}
+                </span>
+              </el-breadcrumb-item>
+            </template>
           </el-breadcrumb>
         </div>
         <!-- 个人中心 -->
         <div class="user">
-          <el-icon size="20" style="vertical-align: middle">
+          <el-tooltip
+            class="item"
+            effect="dark"
+            content="您有新的消息！"
+            placement="left"
+            v-if="messageCount"
+          >
+            <el-icon size="20" style="vertical-align: middle">
+              <el-badge is-dot class="item">
+                <bell />
+              </el-badge>
+            </el-icon>
+          </el-tooltip>
+          <el-icon v-else size="20" style="vertical-align: middle">
             <bell />
           </el-icon>
-          <span class="name">{{ userInfo.name }}</span>
+          <div class="name">
+            <el-dropdown>
+              <span class="text">
+                {{ userInfo.name }}
+              </span>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item>Action 1</el-dropdown-item>
+                  <el-dropdown-item>Action 2</el-dropdown-item>
+                  <el-dropdown-item>Action 3</el-dropdown-item>
+                  <el-dropdown-item>退出登陆</el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </div>
         </div>
       </div>
       <!-- 内容 -->
@@ -73,6 +113,7 @@ export default {
   props: {},
   data() {
     return {
+      messageCount: 10,
       showMenu: true,
       menuList: [
         {
@@ -544,7 +585,9 @@ export default {
   computed: {
     ...mapState(['userInfo'])
   },
-  created() {},
+  created() {
+    console.log(this.$route.matched)
+  },
   mounted() {},
   watch: {},
   methods: {},
@@ -618,13 +661,25 @@ export default {
         height: 50px;
         display: flex;
         align-items: center;
+        .title {
+          cursor: pointer;
+          &:hover {
+            color: rgb(64, 158, 255);
+          }
+        }
       }
       // 个人中心
       .user {
         cursor: pointer;
         line-height: 50px;
         .name {
-          margin: 0 20px 0 10px;
+          margin: 0 20px;
+          display: inline-block;
+          .text {
+            &:hover {
+              color: rgb(64, 158, 255);
+            }
+          }
         }
       }
     }

@@ -45,7 +45,7 @@ export default {
   mounted() {},
   watch: {},
   methods: {
-    changMenu(e){
+    changMenu(e) {
       const path = '/home/' + e.index.split('/')[2]
       this.$router.push(path)
     }
@@ -55,10 +55,9 @@ export default {
 </script>
 
 <style src='' lang="scss" scoped>
-
-.el-menu{
-    .el-menu-item{
-      padding-left: 60px!important;
-    }
+.el-menu {
+  .el-menu-item {
+    padding-left: 60px !important;
   }
+}
 </style>
